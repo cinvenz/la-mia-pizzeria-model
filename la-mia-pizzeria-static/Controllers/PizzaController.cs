@@ -4,11 +4,11 @@ using System.Diagnostics;
 
 namespace la_mia_pizzeria_static.Controllers
 {
-    public class HomeController : Controller
+    public class PizzaController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ILogger<PizzaController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public PizzaController(ILogger<PizzaController> logger)
         {
             _logger = logger;
         }
@@ -17,12 +17,21 @@ namespace la_mia_pizzeria_static.Controllers
         {
             using var ctx = new PizzaContext();
             var pizze = ctx.Pizze.ToArray();
+
             return View(pizze);
         }
 
-        public IActionResult Privacy()
+        public IActionResult Detail(int id)
         {
-            return View();
+            using var ctx = new PizzaContext();
+            var pizze = ctx.Pizze.SingleOrDefault(p => p.Id == id);
+
+            if (pizze is null)
+            {
+                return NotFound($"Pizza with id {id} not found.");
+            }
+
+            return View(pizze);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
