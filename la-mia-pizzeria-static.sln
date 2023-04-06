@@ -5,6 +5,11 @@ VisualStudioVersion = 17.5.33502.453
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "la-mia-pizzeria-static", "la-mia-pizzeria-static\la-mia-pizzeria-static.csproj", "{D9D88345-C51D-4461-9B41-C7E9C140A458}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Elementi di soluzione", "Elementi di soluzione", "{830B6CD2-53BD-4789-B274-587A2CF1984B}"
+	ProjectSection(SolutionItems) = preProject
+		PizzaDb.sql = PizzaDb.sql
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
