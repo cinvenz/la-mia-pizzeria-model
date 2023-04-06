@@ -10,7 +10,7 @@ namespace la_mia_pizzeria_static.Models
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Data Source=localhost;Initial Catalog=PizzaDb;Integrated Security=True;Pooling=False;TrustServerCertificate=True");
+            optionsBuilder.UseSqlServer("Data Source=localhost;Initial Catalog=PizzaDati;Integrated Security=True;TrustServerCertificate=True");
         }
 
         public void Seed()
